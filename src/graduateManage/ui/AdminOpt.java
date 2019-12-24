@@ -40,6 +40,12 @@ public class AdminOpt {
 		case "3":
 			System.out.println("*****************************************************************************");
 			System.out.println("当前位置是：管理员操作界面→【编辑毕业生信息】");
+			for(Entry<String, Graduate> entry: Login.init.graduateList.entrySet()) { // 显示当前所有毕业生
+				System.out.print(Login.init.graduateList.get(entry.getKey()).getID()+"."+
+						Login.init.graduateList.get(entry.getKey()).getUsername()+" "
+						);
+			 }
+			System.out.println();
 			AdminOptDao.modify_gradu_info(ID);
 			break;
 		case "4":
